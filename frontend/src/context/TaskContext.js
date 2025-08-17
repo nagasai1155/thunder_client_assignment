@@ -26,7 +26,11 @@ export const TaskProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-
+  // Load initial data
+  useEffect(() => {
+    loadTasks();
+    loadUsers();
+  }, []);
 
   /**
    * Load all tasks with current filters
