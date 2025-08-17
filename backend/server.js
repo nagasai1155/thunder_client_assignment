@@ -70,9 +70,11 @@ app.use((error, req, res, next) => {
 });
 
 // Handle 404
-app.use('*', (req, res) => {
+// Handle 404
+app.use((req, res) => {
     res.status(404).json({ message: 'Route not found' });
 });
+
 
 app.listen(PORT, () => {
     console.log(`🚀 Server running on port ${PORT}`);
